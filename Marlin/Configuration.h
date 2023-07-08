@@ -91,7 +91,7 @@
   #define MOTHERBOARD BOARD_BTT_SKR_V2_0_REV_B // RASCAL 
 #endif
 
-// #define X_MAX_PIN  3 // Creality connects X_MAX to X_MIN(_PIN) motherboard connector
+#define X_MAX_PIN  3 // Creality connects X_MAX to X_MIN(_PIN) motherboard connector
 #define Y_MAX_PIN 14 // Creality connects Y_MAX to Y_MIN(_PIN) motherboard connector
 
 /**
