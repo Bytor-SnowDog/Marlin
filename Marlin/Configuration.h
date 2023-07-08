@@ -21,8 +21,6 @@
  */
 #pragma once
 
-#define CONFIG_EXAMPLES_DIR "config/examples/Creality/Ender-5 Plus/BigTreeTech SKR 3"
-
 /**
  * Configuration.h
  *
@@ -38,7 +36,7 @@
  * Advanced settings can be found in Configuration_adv.h
  */
 #define CONFIGURATION_H_VERSION 02010201
-//                               2.1.2.1  // RASCAL
+//                               2.1.2.1
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -63,7 +61,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(MODIFIED Ender-5 Plus - by Rob 07/03/2023)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Creality Ender-5 Plus - by Rob 07/03/2023)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -93,6 +91,8 @@
   #define MOTHERBOARD BOARD_BTT_SKR_V2_0_REV_B // RASCAL 
 #endif
 
+#define X_MAX_PIN  3 // Creality connects X_MAX to X_MIN(_PIN) motherboard connector
+#define Y_MAX_PIN 14 // Creality connects Y_MAX to Y_MIN(_PIN) motherboard connector
 
 /**
  * Select the serial port on the board to use for communication with the host.
@@ -139,7 +139,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ender-5 Plus"
+//#define CUSTOM_MACHINE_NAME "E5+"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -167,7 +167,7 @@
 #define Z_DRIVER_TYPE  TMC2209  //RASCAL
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-//#define Z2_DRIVER_TYPE TMC2209  //RASCAL default is commented out, needed for Z_ALIGN_STEPPERS???
+//#define Z2_DRIVER_TYPE A4988
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 //#define I_DRIVER_TYPE  A4988
@@ -856,7 +856,7 @@
 
 #define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
 #define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
-#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
+//#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
 #define THERMAL_PROTECTION_COOLER  // Enable thermal protection for the laser cooling
 
 //===========================================================================
@@ -1036,8 +1036,8 @@
 // Specify here all the endstop connectors that are connected to any endstop or probe.
 // Almost all printers will be using one per axis. Probes will use one or more of the
 // extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
-// #define USE_XMIN_PLUG // RASCAL default is uncommented
-// #define USE_YMIN_PLUG // RASCAL default is uncommented
+#define USE_XMIN_PLUG // RASCAL
+#define USE_YMIN_PLUG // RASCAL
 #define USE_ZMIN_PLUG // RASCAL
 //#define USE_IMIN_PLUG
 //#define USE_JMIN_PLUG
@@ -1045,8 +1045,8 @@
 //#define USE_UMIN_PLUG
 //#define USE_VMIN_PLUG
 //#define USE_WMIN_PLUG
-#define USE_XMAX_PLUG // RASCAL default is commented
-#define USE_YMAX_PLUG // RASCAL default is commented
+#define USE_XMAX_PLUG
+#define USE_YMAX_PLUG
 //#define USE_ZMAX_PLUG
 //#define USE_IMAX_PLUG
 //#define USE_JMAX_PLUG
@@ -1142,6 +1142,7 @@
  *
  * :[2,3,4,5,6,7]
  */
+// TODO rubienr: 100nF parallel to switch is too less -> find accurate capacity and disable ENDSTOP_NOISE_THRESHOLD
 #define ENDSTOP_NOISE_THRESHOLD 2
 
 // Check for stuck or disconnected endstops during homing moves.
@@ -1251,7 +1252,7 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.013 // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.15 // (mm) Distance from real junction edge
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
@@ -1550,8 +1551,8 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-#define MULTIPLE_PROBING   2
-//#define EXTRA_PROBING    1
+#define MULTIPLE_PROBING 2
+//#define EXTRA_PROBING  1
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between
@@ -1567,12 +1568,12 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE    5 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  2 // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     1 // Z Clearance between multiple probes
+#define Z_CLEARANCE_DEPLOY_PROBE     5 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES   2 // Z Clearance between probe points
+#define Z_CLEARANCE_MULTI_PROBE      1 // Z Clearance between multiple probes
 #define Z_AFTER_PROBING Z_AFTER_HOMING // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT           -2 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -4
@@ -1963,7 +1964,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 3 // RASCAL  Default = 3 (3x3 = 9 probe points)
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -1995,8 +1996,8 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET       15       // Set Mesh bounds as an inset region of the bed // RASCAL default is 1
-  #define GRID_MAX_POINTS_X 5       // Don't use more than 15 points per axis, implementation limited.
+  #define MESH_INSET       15       // Set Mesh bounds as an inset region of the bed
+  #define GRID_MAX_POINTS_X 7       // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   //#define UBL_HILBERT_CURVE       // Use Hilbert distribution for less travel when probing multiple points
@@ -2015,7 +2016,7 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed // RASCAL default = 10
   #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
@@ -2036,7 +2037,7 @@
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-#define LCD_BED_TRAMMING
+//#define LCD_BED_TRAMMING
 
 #if ENABLED(LCD_BED_TRAMMING)
   #define BED_TRAMMING_INSET_LFRB { 30, 30, 30, 30 } // (mm) Left, Front, Right, Back insets
@@ -2456,7 +2457,7 @@
  *
  * :['JAPANESE', 'WESTERN', 'CYRILLIC']
  */
-#define DISPLAY_CHARSET_HD44780 JAPANESE
+#define DISPLAY_CHARSET_HD44780 WESTERN
 
 /**
  * Info Screen Style (0:Classic, 1:Průša)
@@ -2486,7 +2487,7 @@
  * Disable all menus and only display the Status Screen, or
  * just remove some extraneous menu items to recover space.
  */
-//#define NO_LCD_MENUS
+//#define NO_LCD_MENUS // RASCAL defautl is uncommented
 //#define SLIM_LCD_MENUS
 
 //
@@ -2560,7 +2561,7 @@
 // If you have a speaker that can produce tones, enable it here.
 // By default Marlin assumes you have a buzzer with a fixed frequency.
 //
-#define SPEAKER // RASCAL default is commented out
+//#define SPEAKER
 
 //
 // The duration and frequency for the UI feedback sound.
@@ -2569,8 +2570,8 @@
 // Note: Test audio output with the G-Code:
 //  M300 S<frequency Hz> P<duration ms>
 //
-#define LCD_FEEDBACK_FREQUENCY_DURATION_MS 2 // RASCAL default is commented out
-#define LCD_FEEDBACK_FREQUENCY_HZ 5000 // RASCAL default is commented out
+//#define LCD_FEEDBACK_FREQUENCY_DURATION_MS 2
+//#define LCD_FEEDBACK_FREQUENCY_HZ 5000
 
 //=============================================================================
 //======================== LCD / Controller Selection =========================
@@ -2742,7 +2743,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-// #define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER // RASCAL default = commented out // Used by BTT TFT display
+//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
 // K.3D Full Graphic Smart Controller
@@ -2986,11 +2987,11 @@
 //  - Plug the microSD card into the back of the display.
 //  - Boot the display and wait for the update to complete.
 //
-//#define DGUS_LCD_UI_ORIGIN // RASCAL default is uncommented. Causes conflict with RepRap Fully Discounted display - can't have two diplays
+#define DGUS_LCD_UI_ORIGIN // RASCAL default is uncommented.
 //#define DGUS_LCD_UI_FYSETC
 //#define DGUS_LCD_UI_HIPRECY
 //#define DGUS_LCD_UI_MKS
-#define DGUS_LCD_UI_RELOADED // RASCAL TESTING - REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER commented out
+//#define DGUS_LCD_UI_RELOADED
 #if ENABLED(DGUS_LCD_UI_MKS)
   #define USE_MKS_GREEN_UI
 #endif
