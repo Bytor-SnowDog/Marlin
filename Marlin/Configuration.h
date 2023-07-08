@@ -2994,7 +2994,7 @@
 #if ENABLED(DGUS_LCD_UI_MKS)
   #define USE_MKS_GREEN_UI
 #endif
-#define LCD_SERIAL_PORT 1 // RASCAL default is uncommented was 2
+#define LCD_SERIAL_PORT 2 // RASCAL default is uncommented
 
 //
 // Touch-screen LCD for Malyan M200/M300 printers
