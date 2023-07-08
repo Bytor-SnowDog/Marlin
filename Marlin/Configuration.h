@@ -61,7 +61,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Creality Ender-5 Plus - by Rob 07/03/2023)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(MODIFIED Ender-5 Plus - by Rob 07/03/2023)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -165,9 +165,9 @@
 #define X_DRIVER_TYPE  TMC2209  //RASCAL
 #define Y_DRIVER_TYPE  TMC2209  //RASCAL
 #define Z_DRIVER_TYPE  TMC2209  //RASCAL
-//#define X2_DRIVER_TYPE A4988  //RASCAL default is commented out, needed for Z_ALIGN_STEPPERS???
+//#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-#define Z2_DRIVER_TYPE TMC2209  //RASCAL default is commented out, needed for Z_ALIGN_STEPPERS???
+//#define Z2_DRIVER_TYPE TMC2209  //RASCAL default is commented out, needed for Z_ALIGN_STEPPERS???
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 //#define I_DRIVER_TYPE  A4988
@@ -1045,9 +1045,9 @@
 //#define USE_UMIN_PLUG
 //#define USE_VMIN_PLUG
 //#define USE_WMIN_PLUG
-//#define USE_XMAX_PLUG // RASCAL default = commented
-//#define USE_YMAX_PLUG // RASCAL default = commented
-//#define USE_ZMAX_PLUG // RASCAL default = commented
+#define USE_XMAX_PLUG // RASCAL default is commented
+#define USE_YMAX_PLUG // RASCAL default is commented
+//#define USE_ZMAX_PLUG
 //#define USE_IMAX_PLUG
 //#define USE_JMAX_PLUG
 //#define USE_KMAX_PLUG
@@ -1284,7 +1284,7 @@
 #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN  // RASCAL  Plug BLTouch switch (black/white) into the Z endstop connector on the BTT SKR 2
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+// #define USE_PROBE_FOR_Z_HOMING // RASCAL default is commented
 
 /**
  * Z_MIN_PROBE_PIN
@@ -2487,7 +2487,7 @@
  * Disable all menus and only display the Status Screen, or
  * just remove some extraneous menu items to recover space.
  */
-#define NO_LCD_MENUS // RASCAL default is uncommented
+//#define NO_LCD_MENUS // RASCAL default is uncommented
 //#define SLIM_LCD_MENUS
 
 //
@@ -2987,7 +2987,7 @@
 //  - Plug the microSD card into the back of the display.
 //  - Boot the display and wait for the update to complete.
 //
-// #define DGUS_LCD_UI_ORIGIN // RASCAL default is uncommented. Causes conflict with RepRap Fully Discounted display - can't have two diplays
+//#define DGUS_LCD_UI_ORIGIN // RASCAL default is uncommented. Causes conflict with RepRap Fully Discounted display - can't have two diplays
 //#define DGUS_LCD_UI_FYSETC
 //#define DGUS_LCD_UI_HIPRECY
 //#define DGUS_LCD_UI_MKS
