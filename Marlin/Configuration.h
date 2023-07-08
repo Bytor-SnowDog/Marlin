@@ -91,7 +91,7 @@
   #define MOTHERBOARD BOARD_BTT_SKR_V2_0_REV_B // RASCAL 
 #endif
 
-#define X_MAX_PIN  3 // Creality connects X_MAX to X_MIN(_PIN) motherboard connector
+// #define X_MAX_PIN  3 // Creality connects X_MAX to X_MIN(_PIN) motherboard connector
 #define Y_MAX_PIN 14 // Creality connects Y_MAX to Y_MIN(_PIN) motherboard connector
 
 /**
@@ -165,9 +165,9 @@
 #define X_DRIVER_TYPE  TMC2209  //RASCAL
 #define Y_DRIVER_TYPE  TMC2209  //RASCAL
 #define Z_DRIVER_TYPE  TMC2209  //RASCAL
-//#define X2_DRIVER_TYPE A4988
+//#define X2_DRIVER_TYPE A4988  //RASCAL default is commented out, needed for Z_ALIGN_STEPPERS???
 //#define Y2_DRIVER_TYPE A4988
-//#define Z2_DRIVER_TYPE A4988
+#define Z2_DRIVER_TYPE TMC2209  //RASCAL default is commented out, needed for Z_ALIGN_STEPPERS???
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 //#define I_DRIVER_TYPE  A4988
@@ -1045,8 +1045,8 @@
 //#define USE_UMIN_PLUG
 //#define USE_VMIN_PLUG
 //#define USE_WMIN_PLUG
-//#define USE_XMAX_PLUG // RASCAL default = uncommented
-//#define USE_YMAX_PLUG // RASCAL default = uncommented
+// #define USE_XMAX_PLUG // RASCAL default = uncommented
+// #define USE_YMAX_PLUG // RASCAL default = uncommented
 //#define USE_ZMAX_PLUG
 //#define USE_IMAX_PLUG
 //#define USE_JMAX_PLUG
@@ -1782,7 +1782,7 @@
  * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  */
-//define FILAMENT_RUNOUT_SENSOR // RASCAL default = uncommented
+// #define FILAMENT_RUNOUT_SENSOR // RASCAL default = uncommented
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
@@ -2250,7 +2250,7 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-//#define NOZZLE_PARK_FEATURE // Default is uncommented
+#define NOZZLE_PARK_FEATURE // Default is uncommented
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
