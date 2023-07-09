@@ -1884,7 +1884,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-#define AUTO_BED_LEVELING_BILINEAR  // RASCAL  uncommented
+#define AUTO_BED_LEVELING_BILINEAR  // RASCAL uncommented
 //#define AUTO_BED_LEVELING_UBL // RASCAL commented out
 //#define MESH_BED_LEVELING
 
@@ -2487,7 +2487,7 @@
  * Disable all menus and only display the Status Screen, or
  * just remove some extraneous menu items to recover space.
  */
-//#define NO_LCD_MENUS // RASCAL defautl is uncommented
+//#define NO_LCD_MENUS // RASCAL default is uncommented
 //#define SLIM_LCD_MENUS
 
 //
