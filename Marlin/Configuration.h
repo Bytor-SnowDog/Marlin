@@ -2987,7 +2987,7 @@
 //  - Plug the microSD card into the back of the display.
 //  - Boot the display and wait for the update to complete.
 //
-#define DGUS_LCD_UI_ORIGIN // RASCAL default is uncommented.
+//#define DGUS_LCD_UI_ORIGIN // RASCAL default is uncommented.
 //#define DGUS_LCD_UI_FYSETC
 //#define DGUS_LCD_UI_HIPRECY
 //#define DGUS_LCD_UI_MKS
