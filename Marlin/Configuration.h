@@ -36,7 +36,7 @@
  * Advanced settings can be found in Configuration_adv.h
  */
 #define CONFIGURATION_H_VERSION 02010201
-//                               2.1.2.1 // RASCAL 07/03/2023
+//                               2.1.2.1 // RASCAL 07/10/2023
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -1045,8 +1045,8 @@
 //#define USE_UMIN_PLUG
 //#define USE_VMIN_PLUG
 //#define USE_WMIN_PLUG
-#define USE_XMAX_PLUG
-#define USE_YMAX_PLUG
+#define USE_XMAX_PLUG // RASCAL default commented
+#define USE_YMAX_PLUG // RASCAL default commented
 //#define USE_ZMAX_PLUG
 //#define USE_IMAX_PLUG
 //#define USE_JMAX_PLUG
@@ -1175,7 +1175,7 @@
  */
 // E steps example: steps per revolution s=200, microstepping m=16, effective gear diameter d=10.95: sm/(πd) = 93.02
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.55, 81.27, 803.0, 390 }  // RASCAL Hemera {80.55, 80.70, 807.01, 397(starting recommendation)}
-// RASCAL Change via Terminal and store in eprom with M500 command
+// RASCAL Change via Terminal M92 and store in eprom with M500 command
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1491,10 +1491,8 @@
  *     O-- FRONT --+
  */
 // Note on Creality Ender-5 Plus: Z offset must be adjusted (M851) every time once the probe has been loosen/unmounted.
-//#define NOZZLE_TO_PROBE_OFFSET { -44, -5, -3.0 } // RASCAL Stock Hot End
-#define NOZZLE_TO_PROBE_OFFSET { -39, 0, -3.0}  // RASCAL HEMERA MUTANT LINEAR RAIL CONFIGURATION measured (Z by baby steps, difference observed, tried -2.95)
-// Most probes should stay away from the edges of the bed, but
-// with NOZZLE_AS_PROBE this can be negative for a wider probing area.
+#define NOZZLE_TO_PROBE_OFFSET { -39, 0, -3.0}  // RASCAL HEMERA MUTANT LINEAR RAIL CONFIGURATION measured Z by babysteps. { -44, -5, -3.0 } Stock Hot End
+// Most probes should stay away from the edges of the bed, but with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #define PROBING_MARGIN 15  // RASCAL  Default 5
 
 // X and Y axis travel speed (mm/min) between probes
@@ -1703,10 +1701,7 @@
 
 // The size of the printable area
 #define X_BED_SIZE 345  // RASCAL Default = 358 (distance between X-Stop and far left limit to not hit left rail/rod support)
-// ex: moved X-stop toward left by ~4mm to clear right rod support bracket and measured to left rod support bracket
-// Linear Rails/Hemera/Custom Duct and BLTouch rotated 180 degrees and Rod Bracket Lowered X = 345
-#define Y_BED_SIZE 345  // RASCAL Default = 370 (Creality Hot End Mount Plate to Fan Face = 48mm)
-                        // RASCAL Linear Rails/Mutant/Hemera = 345
+#define Y_BED_SIZE 345  // RASCAL Default = 370 Creality Hot End, Linear Rails/Mutant/Hemera = 345
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS  0 // RASCAL default = -8
@@ -1964,7 +1959,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3 // RASCAL  Default = 3 (3x3 = 9 probe points)
+  #define GRID_MAX_POINTS_X 3
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -2016,7 +2011,7 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed // RASCAL default = 10
+  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
