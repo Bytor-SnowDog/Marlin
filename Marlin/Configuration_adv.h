@@ -968,7 +968,7 @@
  * Z Steppers Auto-Alignment
  * Add the G34 command to align multiple Z steppers using a bed probe.
  */
-//#define Z_STEPPER_AUTO_ALIGN // RASCAL default commented, need to enable //#define Z2_DRIVER_TYPE TMC2209 in Configuration.h
+#define Z_STEPPER_AUTO_ALIGN // RASCAL default commented, need to enable //#define Z2_DRIVER_TYPE TMC2209 in Configuration.h
 #if ENABLED(Z_STEPPER_AUTO_ALIGN)
   /**
    * Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]

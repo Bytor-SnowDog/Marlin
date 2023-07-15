@@ -167,7 +167,7 @@
 #define Z_DRIVER_TYPE  TMC2209  //RASCAL
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-//#define Z2_DRIVER_TYPE TMC2209  //RASCAL default commented, needed for Z_STEPPER_AUTO_ALIGN in Configuration_adv.h
+#define Z2_DRIVER_TYPE TMC2209  //RASCAL default commented, needed for Z_STEPPER_AUTO_ALIGN in Configuration_adv.h
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 //#define I_DRIVER_TYPE  A4988
