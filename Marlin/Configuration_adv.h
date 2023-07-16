@@ -2760,7 +2760,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Z)
-    #define Z_CURRENT       1100  // RASCAL default 800, Z banding, almost gone with 1000 without Z_STEPPER_AUTO_ALIGN
+    #define Z_CURRENT       650  // RASCAL default 800, Z banding, almost gone with 1000 without Z_STEPPER_AUTO_ALIGN, With auto align set to 650
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     16
     #define Z_RSENSE          0.11
@@ -2770,7 +2770,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Z2)
-    #define Z2_CURRENT      1100 // RASCAL default 800, Z banding, almost gone with 1000 without Z_STEPPER_AUTO_ALIGN
+    #define Z2_CURRENT      650 // RASCAL default 800, Z banding, almost gone with 1000 without Z_STEPPER_AUTO_ALIGN, With auto align set to 650
     #define Z2_CURRENT_HOME Z2_CURRENT
     #define Z2_MICROSTEPS    Z_MICROSTEPS
     #define Z2_RSENSE         0.11
