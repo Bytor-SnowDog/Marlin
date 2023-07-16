@@ -139,7 +139,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-//#define CUSTOM_MACHINE_NAME "E5+"
+#define CUSTOM_MACHINE_NAME "E5+ SKR 2" // RASCAL default commented
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -2556,7 +2556,7 @@
 // If you have a speaker that can produce tones, enable it here.
 // By default Marlin assumes you have a buzzer with a fixed frequency.
 //
-//#define SPEAKER
+#define SPEAKER // RASCAL default commented
 
 //
 // The duration and frequency for the UI feedback sound.
@@ -2565,8 +2565,8 @@
 // Note: Test audio output with the G-Code:
 //  M300 S<frequency Hz> P<duration ms>
 //
-//#define LCD_FEEDBACK_FREQUENCY_DURATION_MS 2
-//#define LCD_FEEDBACK_FREQUENCY_HZ 5000
+#define LCD_FEEDBACK_FREQUENCY_DURATION_MS 2 // RASCAL default commented
+#define LCD_FEEDBACK_FREQUENCY_HZ 5000 // RASCAL default commented
 
 //=============================================================================
 //======================== LCD / Controller Selection =========================
