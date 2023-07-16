@@ -3852,7 +3852,7 @@
 #define HOST_ACTION_COMMANDS // RASCAL default commented, found BTT Github solution to uncomment this - trying now
 #if ENABLED(HOST_ACTION_COMMANDS)
   //#define HOST_PAUSE_M76                // Tell the host to pause in response to M76
-  //#define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback
+  #define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback // RASCAL default commented, found BTT Github solution to uncomment this - trying now
   #if ENABLED(HOST_PROMPT_SUPPORT)
     // #define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications
   #endif
