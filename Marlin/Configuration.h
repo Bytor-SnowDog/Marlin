@@ -1493,7 +1493,7 @@
 // Note on Creality Ender-5 Plus: Z offset must be adjusted (M851) every time once the probe has been loosen/unmounted.
 #define NOZZLE_TO_PROBE_OFFSET { -39, 0, -3.85}  // RASCAL HEMERA MUTANT LINEAR RAIL CONFIGURATION use Probe Offset { -44, -5, -3.0 } Stock Hot End
 // Most probes should stay away from the edges of the bed, but with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 15  // RASCAL default 5
+#define PROBING_MARGIN 45  // RASCAL default 5, was 15, 45 with Z_STEPPER_AUTO_ALIGN
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (133*60)
@@ -1959,7 +1959,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 4 // RASCAL default 3
+  #define GRID_MAX_POINTS_X 3 // RASCAL default 3
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
