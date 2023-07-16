@@ -36,7 +36,7 @@
  * Advanced settings can be found in Configuration_adv.h
  */
 #define CONFIGURATION_H_VERSION 02010201
-//                               2.1.2.1 // RASCAL 07/10/2023
+//                               2.1.2.1 // RASCAL 07/16/2023
 
 //===========================================================================
 //============================= Getting Started =============================
