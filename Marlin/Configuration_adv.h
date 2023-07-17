@@ -3739,7 +3739,7 @@
 // @section custom main menu
 
 // Custom Menu: Main Menu
-//#define CUSTOM_MENU_MAIN
+#define CUSTOM_MENU_MAIN // RASCAL default commented
 #if ENABLED(CUSTOM_MENU_MAIN)
   //#define CUSTOM_MENU_MAIN_TITLE "Custom Commands"
   #define CUSTOM_MENU_MAIN_SCRIPT_DONE "M117 User Script Done"
@@ -3747,24 +3747,24 @@
   //#define CUSTOM_MENU_MAIN_SCRIPT_RETURN   // Return to status screen after a script
   #define CUSTOM_MENU_MAIN_ONLY_IDLE         // Only show custom menu when the machine is idle
 
-  #define MAIN_MENU_ITEM_1_DESC "Home & UBL Info"
-  #define MAIN_MENU_ITEM_1_GCODE "G28\nG29 W"
-  //#define MAIN_MENU_ITEM_1_CONFIRM          // Show a confirmation dialog before this action
+  // #define MAIN_MENU_ITEM_1_DESC "Home & UBL Info" // RASCAL default line
+  // #define MAIN_MENU_ITEM_1_GCODE "G28\nG29 W" // RASCAL default line
+  #define MAIN_MENU_ITEM_1_DESC "PID 205"
+  #define MAIN_MENU_ITEM_1_GCODE "M303 E0 S205 U1 C8"  //#define MAIN_MENU_ITEM_1_CONFIRM          // Show a confirmation dialog before this action
 
-  #define MAIN_MENU_ITEM_2_DESC "Preheat for " PREHEAT_1_LABEL
-  #define MAIN_MENU_ITEM_2_GCODE "M140 S" STRINGIFY(PREHEAT_1_TEMP_BED) "\nM104 S" STRINGIFY(PREHEAT_1_TEMP_HOTEND)
+  #define MAIN_MENU_ITEM_2_DESC "PID 220" PREHEAT_1_LABEL
+  #define MAIN_MENU_ITEM_2_GCODE "M303 E0 S220 U1 C8"
   //#define MAIN_MENU_ITEM_2_CONFIRM
-
-  //#define MAIN_MENU_ITEM_3_DESC "Preheat for " PREHEAT_2_LABEL
-  //#define MAIN_MENU_ITEM_3_GCODE "M140 S" STRINGIFY(PREHEAT_2_TEMP_BED) "\nM104 S" STRINGIFY(PREHEAT_2_TEMP_HOTEND)
+  #define MAIN_MENU_ITEM_3_DESC "PID 235" PREHEAT_2_LABEL // RASCAL default commented
+  #define MAIN_MENU_ITEM_3_GCODE "M303 E0 S235 U1 C8" // RASCAL default commented
   //#define MAIN_MENU_ITEM_3_CONFIRM
 
-  //#define MAIN_MENU_ITEM_4_DESC "Heat Bed/Home/Level"
-  //#define MAIN_MENU_ITEM_4_GCODE "M140 S" STRINGIFY(PREHEAT_2_TEMP_BED) "\nG28\nG29"
+  #define MAIN_MENU_ITEM_4_DESC "PID 245" // RASCAL default commented
+  #define MAIN_MENU_ITEM_4_GCODE "M303 E0 S245 U1 C8" // RASCAL default commented
   //#define MAIN_MENU_ITEM_4_CONFIRM
 
-  //#define MAIN_MENU_ITEM_5_DESC "Home & Info"
-  //#define MAIN_MENU_ITEM_5_GCODE "G28\nM503"
+  #define MAIN_MENU_ITEM_5_DESC "PID 255" // RASCAL default commented
+  #define MAIN_MENU_ITEM_5_GCODE "M303 E0 S255 U1 C8" // RASCAL default commented
   //#define MAIN_MENU_ITEM_5_CONFIRM
 #endif
 
