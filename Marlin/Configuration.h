@@ -167,7 +167,7 @@
 #define Z_DRIVER_TYPE  TMC2209  //RASCAL
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-#define Z2_DRIVER_TYPE TMC2209  //RASCAL default commented, needed for Z_STEPPER_AUTO_ALIGN in Configuration_adv.h
+#define Z2_DRIVER_TYPE TMC2209  //RASCAL default commented, needed for Z_STEPPER_AUTO_ALIGN in Configuration_adv.h, E1 should be used for Z2
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 //#define I_DRIVER_TYPE  A4988
@@ -1959,7 +1959,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3 // RASCAL default 3
+  #define GRID_MAX_POINTS_X 4 // RASCAL default 3
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
