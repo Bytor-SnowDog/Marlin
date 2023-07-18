@@ -970,6 +970,8 @@
  */
 #define Z_STEPPER_AUTO_ALIGN // RASCAL default commented, need to enable //#define Z2_DRIVER_TYPE TMC2209 in Configuration.h
 #if ENABLED(Z_STEPPER_AUTO_ALIGN)
+// AT COMPILE #warning "Note: Auto-assigned Z2 STEP/DIR/ENABLE_PINs to unused En_STEP/DIR/ENABLE_PINs.
+#define NO_AUTO_ASSIGN_WARNING // RASCAL to suppress warning ^^^
   /**
    * Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
    * These positions are machine-relative and do not shift with the M206 home offset!
