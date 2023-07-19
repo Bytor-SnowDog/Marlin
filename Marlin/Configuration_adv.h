@@ -1378,7 +1378,7 @@
 //#define LCD_BACKLIGHT_TIMEOUT_MINS 1  // (minutes) Timeout before turning off the backlight
 
 #if HAS_BED_PROBE && EITHER(HAS_MARLINUI_MENU, HAS_TFT_LVGL_UI)
-  //#define PROBE_OFFSET_WIZARD       // Add a Probe Z Offset calibration option to the LCD menu
+  #define PROBE_OFFSET_WIZARD       // Add a Probe Z Offset calibration option to the LCD menu
   #if ENABLED(PROBE_OFFSET_WIZARD)
     /**
      * Enable to init the Probe Z-Offset when starting the Wizard.
@@ -3741,7 +3741,7 @@
 // @section custom main menu
 
 // Custom Menu: Main Menu
-#define CUSTOM_MENU_MAIN // RASCAL default commented
+// #define CUSTOM_MENU_MAIN // RASCAL default commented
 #if ENABLED(CUSTOM_MENU_MAIN)
   //#define CUSTOM_MENU_MAIN_TITLE "Custom Commands"
   #define CUSTOM_MENU_MAIN_SCRIPT_DONE "M117 User Script Done"
@@ -3749,8 +3749,8 @@
   //#define CUSTOM_MENU_MAIN_SCRIPT_RETURN   // Return to status screen after a script
   #define CUSTOM_MENU_MAIN_ONLY_IDLE         // Only show custom menu when the machine is idle
 
-  // #define MAIN_MENU_ITEM_1_DESC "Home & UBL Info" // RASCAL default line
-  // #define MAIN_MENU_ITEM_1_GCODE "G28\nG29 W" // RASCAL default line
+  #define MAIN_MENU_ITEM_1_DESC "Home & UBL Info" // RASCAL default line
+  #define MAIN_MENU_ITEM_1_GCODE "G28\nG29 W" // RASCAL default line
   #define MAIN_MENU_ITEM_1_DESC "PID 205"
   #define MAIN_MENU_ITEM_1_GCODE "M303 E0 S205 U1 C8"  //#define MAIN_MENU_ITEM_1_CONFIRM          // Show a confirmation dialog before this action
 
