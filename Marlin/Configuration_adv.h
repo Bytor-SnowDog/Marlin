@@ -2290,10 +2290,10 @@
 #if ENABLED(ARC_SUPPORT)
   #define MIN_ARC_SEGMENT_MM      0.1 // (mm) Minimum length of each arc segment
   #define MAX_ARC_SEGMENT_MM      1.0 // (mm) Maximum length of each arc segment
-  #define MIN_CIRCLE_SEGMENTS    72   // Minimum number of segments in a complete circle
-  //#define ARC_SEGMENTS_PER_SEC 50   // Use the feedrate to choose the segment length
+  #define MIN_CIRCLE_SEGMENTS    72   // Minimum number of segments in a complete circle // RASCAL default 72
+  //#define ARC_SEGMENTS_PER_SEC 50   // Use the feedrate to choose the segment length // RASCAL default commented
   #define N_ARC_CORRECTION       25   // Number of interpolated segments between corrections
-  //#define ARC_P_CIRCLES             // Enable the 'P' parameter to specify complete circles
+  //#define ARC_P_CIRCLES             // Enable the 'P' parameter to specify complete circles // RASCAL default commented
   //#define SF_ARC_FIX                // Enable only if using SkeinForge with "Arc Point" fillet procedure
 #endif
 
@@ -2722,7 +2722,7 @@
   #define INTERPOLATE      true
 
   #if AXIS_IS_TMC_CONFIG(X)
-    #define X_CURRENT       650        // (mA) RMS current. Multiply by 1.414 for peak current. // RASCAL default 800
+    #define X_CURRENT       600        // (mA) RMS current. Multiply by 1.414 for peak current. // RASCAL default 800
     #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     16        // 0..256
     #define X_RSENSE          0.11     // Multiplied x1000 for TMC26X
@@ -2742,7 +2742,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Y)
-    #define Y_CURRENT       650  // RASCAL default 800
+    #define Y_CURRENT       600  // RASCAL default 800
     #define Y_CURRENT_HOME  Y_CURRENT
     #define Y_MICROSTEPS     16
     #define Y_RSENSE          0.11
@@ -2762,7 +2762,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Z)
-    #define Z_CURRENT       600  // RASCAL default 800, With z stpeer auto align set to 600
+    #define Z_CURRENT       600  // RASCAL default 800, With Z_STEPPER_AUTO_ALING set to 600 (needs only a couple iterations)
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     16
     #define Z_RSENSE          0.11
@@ -2772,7 +2772,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Z2)
-    #define Z2_CURRENT      600  // RASCAL default 800, With z stpeer auto align set to 600
+    #define Z2_CURRENT      600  // RASCAL default 800, With Z_STEPPER_AUTO_ALING set to 600 (needs only a couple iterations)
     #define Z2_CURRENT_HOME Z2_CURRENT
     #define Z2_MICROSTEPS    Z_MICROSTEPS
     #define Z2_RSENSE         0.11
@@ -2862,7 +2862,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(E0)
-    #define E0_CURRENT      1100  // RASCAL default 800, Hemera recommends 1000, trying 1100 for extrude quality
+    #define E0_CURRENT      800  // RASCAL default 800, Hemera recommends 1000, trying 800 for extrude quality
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
