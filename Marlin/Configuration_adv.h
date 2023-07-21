@@ -971,7 +971,7 @@
 #define Z_STEPPER_AUTO_ALIGN // RASCAL default commented, need to enable //#define Z2_DRIVER_TYPE TMC2209 in Configuration.h
 #if ENABLED(Z_STEPPER_AUTO_ALIGN)
 // AT COMPILE #warning "Note: Auto-assigned Z2 STEP/DIR/ENABLE_PINs to unused En_STEP/DIR/ENABLE_PINs.
-#define NO_AUTO_ASSIGN_WARNING // RASCAL to suppress warning ^^^
+#define NO_AUTO_ASSIGN_WARNING // RASCAL to suppress warning ^^^ recommended by compiler
   /**
    * Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
    * These positions are machine-relative and do not shift with the M206 home offset!
@@ -1021,7 +1021,7 @@
 
   // On a 300mm bed a 5% grade would give a misalignment of ~1.5cm
   #define G34_MAX_GRADE              5    // (%) Maximum incline that G34 will handle
-  #define Z_STEPPER_ALIGN_ITERATIONS 15    // Number of iterations to apply during alignment // RASCAL default 5
+  #define Z_STEPPER_ALIGN_ITERATIONS 15   // Number of iterations to apply during alignment // RASCAL default 5
   #define Z_STEPPER_ALIGN_ACC        0.02 // Stop iterating early if the accuracy is better than this
   #define RESTORE_LEVELING_AFTER_G34      // Restore leveling after G34 is done?
   // After G34, re-home Z (G28 Z) or just calculate it from the last probe heights?
@@ -2110,7 +2110,7 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-// #define LIN_ADVANCE // RASCAL commented out - not working well
+#define LIN_ADVANCE // RASCAL - not working well - Keep trying to learn more
 #if ENABLED(LIN_ADVANCE)
   #if ENABLED(DISTINCT_E_FACTORS)
     #define ADVANCE_K { 0.6 }     // (mm) Compression length per 1mm/s extruder speed, per extruder
