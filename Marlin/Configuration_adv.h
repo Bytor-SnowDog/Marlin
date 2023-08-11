@@ -33,7 +33,7 @@
  * Basic settings can be found in Configuration.h
  */
 #define CONFIGURATION_ADV_H_VERSION 02010201
-//                                   2.1.2.1 // RASCAL 08/03/2023
+//                                   2.1.2.1 // RASCAL 2023-08-11
 
 // @section develop
 

@@ -36,7 +36,7 @@
  * Advanced settings can be found in Configuration_adv.h
  */
 #define CONFIGURATION_H_VERSION 02010201
-//                               2.1.2.1 // RASCAL 08/03/2023
+//                               2.1.2.1 // RASCAL 2023-08-11
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -1709,7 +1709,7 @@
 #define Z_MIN_POS  0
 #define X_MAX_POS  X_BED_SIZE + X_MIN_POS
 #define Y_MAX_POS  Y_BED_SIZE + Y_MIN_POS
-#define Z_MAX_POS  390        + Z_MIN_POS // RASCAL default 405 // decrease for installation of linear rails
+#define Z_MAX_POS  380        + Z_MIN_POS // RASCAL default 405 // decrease (to 390) for installation of linear rails and (380) for WobbleX
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
