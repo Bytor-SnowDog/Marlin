@@ -1032,11 +1032,12 @@
 //
 // Add the G35 command to read bed corners to help adjust screws. Requires a bed probe.
 //
-#define ASSISTED_TRAMMING // RASCAL default commented
+//#define ASSISTED_TRAMMING // RASCAL default commented
 #if ENABLED(ASSISTED_TRAMMING)
 
   // Define positions for probe points.
-  #define TRAMMING_POINT_XY { {  20, 20 }, { 335,  20 }, { 335, 335 }, { 20, 335 } }
+  #define TRAMMING_POINT_XY { {  PROBING_MARGIN , PROBING_MARGIN }, { X_BED_SIZE - 39,  PROBING_MARGIN }, { X_BED_SIZE - 39, Y_BED_SIZE - PROBING_MARGIN }, { PROBING_MARGIN, Y_BED_SIZE - PROBING_MARGIN } } // RASCAL trial and error compiling 
+  // RASCAL X = 306 = X_BED_SIZE(345) - absolute(X NOZZLE_TO_PROBE_OFFSET (-39),   Y = 330 = 345-15
   //#define TRAMMING_POINT_XY { {  20, 20 }, { 180,  20 }, { 180, 180 }, { 20, 180 } } // RASCAL default
 
   // Define position names for probe points.
@@ -1046,9 +1047,9 @@
   #define TRAMMING_POINT_NAME_4 "Back-Left"
 
   #define RESTORE_LEVELING_AFTER_G35    // Enable to restore leveling setup after operation
-  //#define REPORT_TRAMMING_MM          // Report Z deviation (mm) for each point relative to the first
+  //#define REPORT_TRAMMING_MM          // Report Z deviation (mm) for each point relative to the first // RASCAL default commented
 
-  #define ASSISTED_TRAMMING_WIZARD    // Add a Tramming Wizard to the LCD menu // RASCAL default commented
+  //#define ASSISTED_TRAMMING_WIZARD    // Add a Tramming Wizard to the LCD menu // RASCAL default commented
 
   //#define ASSISTED_TRAMMING_WAIT_POSITION { X_CENTER, Y_CENTER, 30 } // Move the nozzle out of the way for adjustment
 
