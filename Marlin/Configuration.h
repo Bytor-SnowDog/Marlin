@@ -1709,7 +1709,7 @@
 #define Z_MIN_POS  0
 #define X_MAX_POS  X_BED_SIZE + X_MIN_POS
 #define Y_MAX_POS  Y_BED_SIZE + Y_MIN_POS
-#define Z_MAX_POS  375        + Z_MIN_POS // RASCAL default 405 // decrease (to 390) for installation of linear rails and (380) for WobbleX
+#define Z_MAX_POS  375        + Z_MIN_POS // RASCAL default 405 // decrease (to 390) for installation of linear rails and (375) for WobbleX
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
