@@ -2035,8 +2035,8 @@
 //#define LCD_BED_TRAMMING // RASCAL default commented
 
 #if ENABLED(LCD_BED_TRAMMING)
-  #define BED_TRAMMING_INSET_LFRB { 39, PROBING_MARGIN, 39, PROBING_MARGIN } // (mm) Left, Front, Right, Back insets 
-  // RASCAL L & R = absolute(X NOZZLE_TO_PROBE_OFFSET(-39)), F & B = absolute(PROBING_MARGIN (15))
+  #define BED_TRAMMING_INSET_LFRB { 39, PROBING_MARGIN, 39, PROBING_MARGIN } // (mm) Left, Front, Right, Back insets  // RASCAL
+  // RASCAL L & R = absolute(X NOZZLE_TO_PROBE_OFFSET(-39)), F & B = absolute(PROBING_MARGIN (15)) // RASCAL
   //#define BED_TRAMMING_INSET_LFRB { 30, 30, 30, 30 } // (mm) Left, Front, Right, Back insets // RASCAL default
   #define BED_TRAMMING_HEIGHT      0.0        // (mm) Z height of nozzle at leveling points
   #define BED_TRAMMING_Z_HOP       4.0        // (mm) Z height of nozzle between leveling points
