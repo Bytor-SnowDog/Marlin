@@ -1178,7 +1178,7 @@
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
- * Override with M203 // RASCAL - BTT needs to be done manually and M500 save
+ * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 #define DEFAULT_MAX_FEEDRATE          { 8000, 8000, 15, 15000 } // RASCAL M203 & M500
@@ -2023,7 +2023,7 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-#define LCD_BED_LEVELING // RASCAL default commented
+//#define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.025 // (mm) Step size while manually probing Z axis.
@@ -2043,7 +2043,7 @@
   //#define BED_TRAMMING_INCLUDE_CENTER       // Move to the center after the last corner // RASCAL default commented
   //#define BED_TRAMMING_USE_PROBE // RASCAL default commented
   #if ENABLED(BED_TRAMMING_USE_PROBE)
-    #define BED_TRAMMING_PROBE_TOLERANCE 0.1  // (mm)
+    #define BED_TRAMMING_PROBE_TOLERANCE 0.05  // (mm) // RASCAL default 0.1
     #define BED_TRAMMING_VERIFY_RAISED        // After adjustment triggers the probe, re-probe to verify
     //#define BED_TRAMMING_AUDIO_FEEDBACK
   #endif

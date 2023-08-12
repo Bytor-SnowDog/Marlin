@@ -1170,7 +1170,7 @@
 // Backlash Compensation
 // Adds extra movement to axes on direction-changes to account for backlash.
 //
-//#define BACKLASH_COMPENSATION // RASCAL default commented
+//#define BACKLASH_COMPENSATION
 #if ENABLED(BACKLASH_COMPENSATION)
   // Define values for backlash distance and correction.
   // If BACKLASH_GCODE is enabled these values are the defaults.
@@ -1455,7 +1455,7 @@
   //#define LCD_DECIMAL_SMALL_XY
 
   // Show the E position (filament used) during printing
-  #define LCD_SHOW_E_TOTAL // RASCAL default commented
+  //#define LCD_SHOW_E_TOTAL
 
   /**
    * LED Control Menu
@@ -1501,7 +1501,7 @@
 #if HAS_DISPLAY && EITHER(SDSUPPORT, SET_PROGRESS_MANUALLY)
   #define SHOW_PROGRESS_PERCENT           // Show print progress percentage (doesn't affect progress bar)
   #define SHOW_ELAPSED_TIME               // Display elapsed printing time (prefix 'E')
-  #define SHOW_REMAINING_TIME           // Display estimated time to completion (prefix 'R') // RASCAL default commented
+  //#define SHOW_REMAINING_TIME           // Display estimated time to completion (prefix 'R')
   #if ENABLED(SET_INTERACTION_TIME)
     #define SHOW_INTERACTION_TIME         // Display time until next user interaction ('C' = filament change)
   #endif
@@ -2292,10 +2292,10 @@
 #if ENABLED(ARC_SUPPORT)
   #define MIN_ARC_SEGMENT_MM      0.1 // (mm) Minimum length of each arc segment
   #define MAX_ARC_SEGMENT_MM      1.0 // (mm) Maximum length of each arc segment
-  #define MIN_CIRCLE_SEGMENTS    72   // Minimum number of segments in a complete circle // RASCAL default 72
-  //#define ARC_SEGMENTS_PER_SEC 50   // Use the feedrate to choose the segment length // RASCAL default commented
+  #define MIN_CIRCLE_SEGMENTS    72   // Minimum number of segments in a complete circle
+  //#define ARC_SEGMENTS_PER_SEC 50   // Use the feedrate to choose the segment length
   #define N_ARC_CORRECTION       25   // Number of interpolated segments between corrections
-  //#define ARC_P_CIRCLES             // Enable the 'P' parameter to specify complete circles // RASCAL default commented
+  //#define ARC_P_CIRCLES             // Enable the 'P' parameter to specify complete circles
   //#define SF_ARC_FIX                // Enable only if using SkeinForge with "Arc Point" fillet procedure
 #endif
 
@@ -2764,7 +2764,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Z)
-    #define Z_CURRENT       800  // RASCAL default 800
+    #define Z_CURRENT       800
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     16
     #define Z_RSENSE          0.11
@@ -2774,7 +2774,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Z2)
-    #define Z2_CURRENT      800  // RASCAL default 800
+    #define Z2_CURRENT      800
     #define Z2_CURRENT_HOME Z2_CURRENT
     #define Z2_MICROSTEPS    Z_MICROSTEPS
     #define Z2_RSENSE         0.11
@@ -2864,7 +2864,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(E0)
-    #define E0_CURRENT      800  // RASCAL default 800, Hemera recommends 1000, trying 800 for extrude quality
+    #define E0_CURRENT      800
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
@@ -3743,7 +3743,7 @@
 // @section custom main menu
 
 // Custom Menu: Main Menu
-// #define CUSTOM_MENU_MAIN // RASCAL default commented
+// #define CUSTOM_MENU_MAIN
 #if ENABLED(CUSTOM_MENU_MAIN)
   //#define CUSTOM_MENU_MAIN_TITLE "Custom Commands"
   #define CUSTOM_MENU_MAIN_SCRIPT_DONE "M117 User Script Done"
@@ -3751,24 +3751,24 @@
   //#define CUSTOM_MENU_MAIN_SCRIPT_RETURN   // Return to status screen after a script
   #define CUSTOM_MENU_MAIN_ONLY_IDLE         // Only show custom menu when the machine is idle
 
-  #define MAIN_MENU_ITEM_1_DESC "Home & UBL Info" // RASCAL default line
-  #define MAIN_MENU_ITEM_1_GCODE "G28\nG29 W" // RASCAL default line
+  #define MAIN_MENU_ITEM_1_DESC "Home & UBL Info"
+  #define MAIN_MENU_ITEM_1_GCODE "G28\nG29 W"
   #define MAIN_MENU_ITEM_1_DESC "PID 205"
   #define MAIN_MENU_ITEM_1_GCODE "M303 E0 S205 U1 C8"  //#define MAIN_MENU_ITEM_1_CONFIRM          // Show a confirmation dialog before this action
 
-  #define MAIN_MENU_ITEM_2_DESC "PID 220" PREHEAT_1_LABEL
+  //#define MAIN_MENU_ITEM_2_DESC "PID 220" PREHEAT_1_LABEL
   #define MAIN_MENU_ITEM_2_GCODE "M303 E0 S220 U1 C8"
   //#define MAIN_MENU_ITEM_2_CONFIRM
-  #define MAIN_MENU_ITEM_3_DESC "PID 235" PREHEAT_2_LABEL // RASCAL default commented
-  #define MAIN_MENU_ITEM_3_GCODE "M303 E0 S235 U1 C8" // RASCAL default commented
+  #define MAIN_MENU_ITEM_3_DESC "PID 235" PREHEAT_2_LABEL
+  //#define MAIN_MENU_ITEM_3_GCODE "M303 E0 S235 U1 C8"
   //#define MAIN_MENU_ITEM_3_CONFIRM
 
-  #define MAIN_MENU_ITEM_4_DESC "PID 245" // RASCAL default commented
-  #define MAIN_MENU_ITEM_4_GCODE "M303 E0 S245 U1 C8" // RASCAL default commented
+  //#define MAIN_MENU_ITEM_4_DESC "PID 245"
+  //#define MAIN_MENU_ITEM_4_GCODE "M303 E0 S245 U1 C8"
   //#define MAIN_MENU_ITEM_4_CONFIRM
 
-  #define MAIN_MENU_ITEM_5_DESC "PID 255" // RASCAL default commented
-  #define MAIN_MENU_ITEM_5_GCODE "M303 E0 S255 U1 C8" // RASCAL default commented
+  //#define MAIN_MENU_ITEM_5_DESC "PID 255"
+  //#define MAIN_MENU_ITEM_5_GCODE "M303 E0 S255 U1 C8"
   //#define MAIN_MENU_ITEM_5_CONFIRM
 #endif
 
