@@ -1174,7 +1174,7 @@
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 // E steps example: steps per revolution s=200, microstepping m=16, effective gear diameter d=10.95: sm/(πd) = 93.02
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.07, 80.94, 826.07, 395.10 }  // RASCAL Hemera {80.55, 80.70, 807.01, 397} (starting recommendation) M92 & store and store with M500
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.07, 80.73, 826.07, 395.10 }  // RASCAL Hemera {80.55, 80.70, 807.01, 397} (starting recommendation) M92 & store and store with M500
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
